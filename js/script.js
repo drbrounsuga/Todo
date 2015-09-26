@@ -27,3 +27,8 @@ $('.add-todo').on('click', function(e){
 	alert( 'Added Task: ' + $('#todo').find('input').val() );
 	$('#todo').find('input').val('').trigger('keyup').trigger('focus');
 });
+
+//delete buttons
+$('.delete').on('click', function(){
+	alert('Task Deleted');
+});
