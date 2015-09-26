@@ -1,3 +1,6 @@
+/* ---------------------
+General Styles 
+------------------------ */
 *{
   box-sizing: border-box;
 }
@@ -9,6 +12,10 @@
   font-family: arial, sans-serif;
 }
 
+
+/* ---------------------
+Add New Task Bar Styles 
+------------------------ */
 header{
   position: relative;
   height: 65px;
@@ -17,6 +24,7 @@ header{
   color: #fff;
 }
 
+/* search box */
 label{
   position: absolute;
   top: 0;
@@ -47,19 +55,6 @@ header.empty:hover input{
   transform: translateY(8px);
 }
 
-nav, 
-.add-todo{
-  width: 65px;
-  height: 65px;
-}
-
-nav{
-  position: absolute;
-  top: 0;
-  right: 0;
-  background-color: #11344F;
-}
-
 span{
   display: inline-block;
   color: rgba(255, 255, 255, 0.5);
@@ -72,6 +67,20 @@ header.populated span,
 header.empty:hover span{
   color: rgba(226, 112, 8, 0.9);
   transform: translate(-3px, -18px) scale(0.8, 0.8);
+}
+
+/* add button */
+nav, 
+.add-todo{
+  width: 65px;
+  height: 65px;
+}
+
+nav{
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #11344F;
 }
 
 .add-todo{
@@ -106,8 +115,12 @@ nav:hover .add-todo::after{
 }
 
 
-
-
+/* ---------------------
+Todo Item Styles 
+------------------------ */
+section{
+  display: none;
+}
 
 
 
