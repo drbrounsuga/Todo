@@ -13,7 +13,7 @@ html, body{
 #todo{
   width: 404px;
   border: 2px solid #11344F;
-  margin: 10px auto;
+  margin: 50px auto;
   background-color: #C3D0E1;
   font-family: arial, sans-serif;
 }
@@ -139,7 +139,7 @@ ul{
 li{
   position: relative;
   border-bottom: 1px dotted #427CA7;
-  padding: 20px 40px 20px 50px;
+  padding: 20px 40px 20px 45px;
 }
 
 li:last-child{
@@ -172,3 +172,66 @@ li:last-child{
 }
 
 /* status button */
+.status{
+  position: absolute;
+  top: 20px;
+  left: 15px;
+  width: 20px;
+  height: 20px;
+  display: inline-block;
+  border: 1px solid #427CA7;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.status::before,
+.status::after{
+  content: '';
+  position: absolute;
+  top: 0;
+  display: inline-block;
+  width: 20px;
+  height: 1px;
+  /* background-color: rgba(66, 124, 167, 0); */
+  background-color: red;
+  transition: all .3s ease-in-out;
+}
+
+.status::before{
+  left: 0;
+  transform: translate(-10.5px, 8.5px) rotate(90deg);
+}
+
+.status::after{
+  right: 0;
+  transform: translate(10.5px, 8.5px) rotate(90deg);
+}
+
+.open .status::before,
+.open .status::after,
+.started .status::after{
+  background-color: rgba(66, 124, 167, 0);
+}
+
+.started .status::before,
+.complete .status::before{
+  background-color: rgba(66, 124, 167, 1);
+  transform: translate(-1px, 8.5px) rotate(-45deg);
+}
+
+.started .status::before{
+  background-color: rgba(0, 220, 0, 1);
+}
+
+.complete .status::before,
+.complete .status::after{
+  background-color: rgba(226, 112, 8, 1);
+}
+
+.complete .status::after{
+  transform: translate(1px, 8.5px) rotate(45deg);
+}
+
+.complete{
+  color: #777;
+  text-decoration: line-through;
+}
