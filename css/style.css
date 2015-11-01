@@ -65,6 +65,10 @@ input{
   transition: all 0.1s ease-in;
 }
 
+input::-ms-clear{
+  display: none;
+}
+
 header.populated input,
 header.empty:hover input{
   transform: translateY(8px);
