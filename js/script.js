@@ -21,6 +21,9 @@ var todoApp = (function($){
 				var html = template(list);
         $todo.html(html);
 			},
+			showList = function(){
+        $todo.removeClass('hidden');
+			},
 			focusInput = function(){
 				$todo.find('input')
 						.val('')
@@ -126,6 +129,7 @@ var todoApp = (function($){
 			init = function(){
 				cacheDOM();
 				compileTemplate();
+				showList();
 				renderList();
 				bindEvents();
 			};
