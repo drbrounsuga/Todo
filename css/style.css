@@ -28,6 +28,10 @@ html, body{
   color: #11344F;
 }
 
+.hidden{
+  visibility: hidden;
+}
+
 /* ---------------------
 Add New Task Bar Styles 
 ------------------------ */
@@ -155,9 +159,13 @@ li:last-child{
   border-bottom: none;
 }
 
+li:hover .delete{
+  display: inline-block;
+}
+
 /* exit button */
 .delete{
-  display: inline-block;
+  display: none;
   position: absolute;
   top: 8px;
   right: 8px;
