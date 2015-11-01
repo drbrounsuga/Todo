@@ -18,6 +18,15 @@ html, body{
   font-family: arial, sans-serif;
 }
 
+.github{
+  font-family: arial, sans-serif;
+  text-align: center;
+  padding: 50px;
+}
+
+.github a{
+  color: #11344F;
+}
 
 /* ---------------------
 Add New Task Bar Styles 
