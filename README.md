@@ -7,4 +7,6 @@ alt="Todo List" />
 
 Inspired by [Tasker To-Do List](http://www.chynodeluxe.com/portfolio/tasker-to-do-list/)
 
+**Demo:** [http://www.portfolio.bonvon.com/demo/todo/](http://www.portfolio.bonvon.com/demo/todo/)
+
 **Author:** LaVaughn Haynes – [http://www.bonvon.com](http://www.bonvon.com)
