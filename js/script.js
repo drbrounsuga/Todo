@@ -5,6 +5,7 @@ var todoApp = (function($){
 	var $document,
 			$todo,
 			list = [],
+			template,
 			progressStatus = ['open', 'started', 'complete'],
 			todoTemplate,
 
@@ -13,9 +14,11 @@ var todoApp = (function($){
 				$todo = $document.find('#todo');
 				todoTemplate = $document.find('#todoTemplate').html();
 			},
+			compileTemplate = function(){
+				template =  Handlebars.compile(todoTemplate);
+			},
 			renderList = function(){
-				var template =  Handlebars.compile(todoTemplate),
-        html = template(list);
+				var html = template(list);
         $todo.html(html);
 			},
 			focusInput = function(){
@@ -98,7 +101,9 @@ var todoApp = (function($){
 			destroy = function(){
 				$todo.empty();
 				list = [];
-				//remove event handlers
+				unbindEvents();
+			},
+			unbindEvents = function(){
 				$todo.off('click', '.add-todo', addListItem);
 				$todo.off('click', '.delete', removeListItem);
 				$todo.off('keyup', 'input', checkInput);
@@ -106,20 +111,23 @@ var todoApp = (function($){
 				$todo.off('mouseenter', 'header', hoverSelect);
 				$todo.off('click', '.status', cycleStatus);
 			},
-			reset = function(){
-				destroy();
-				init();
-			},
-			init = function(){
-				cacheDOM();
-				renderList();
-				//add event handlers
+			bindEvents = function(){
 				$todo.on('click', '.add-todo', addListItem);
 				$todo.on('click', '.delete', removeListItem);
 				$todo.on('keyup', 'input', checkInput);
 				$todo.on('keypress', 'input', captureEnterPress);
 				$todo.on('mouseenter', 'header', hoverSelect);
 				$todo.on('click', '.status', cycleStatus);
+			},
+			reset = function(){
+				destroy();
+				init();
+			},
+			init = function(){
+				cacheDOM();
+				compileTemplate();
+				renderList();
+				bindEvents();
 			};
 
 		init();
