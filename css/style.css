@@ -173,6 +173,7 @@ li:hover .delete{
   width: 20px;
   height: 20px;
   border-radius: 50%;
+  text-decoration: none;
 }
 
 .delete::after{
